@@ -18,12 +18,13 @@ public class BankBookController {
 	
 	
 	@RequestMapping(value = "list.iu", method = RequestMethod.GET)
-	public void list(Model model) throws Exception {
+	public String list(Model model) throws Exception {
 		//ModelAndView mv = new ModelAndView();
 		System.out.println("list 실행");
 		List<BankBookDTO> ar = bankBookService.getList();
 		model.addAttribute("list", ar);
 		
+		return "bankbook/list";
 		
 	}
 	
